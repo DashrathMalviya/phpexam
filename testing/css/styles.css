@@ -1,20 +1,24 @@
 body {
-    background-color: rgb(224, 213, 225);
+    background-image:url("./background.jpg");
+    background-attachment: fixed;
+    background:linear-gradient(to top,white,rgb(208, 156, 156));
+    
 }
 
 .nav {
-    margin-top: 0;
     background-color: black;
     opacity: 80%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    height: 40px;
+    height: auto;
+    width: 100%;
 }
 
 .nav ul {
     list-style: none;
     padding-top: 10px;
+    padding-bottom: 10px;
     padding-bottom: 10;
 }
 
@@ -44,14 +48,15 @@ body {
 
 #sbutton {
     display: block;
-    /* background-color: red; */
     margin-left: auto;
     margin-right: auto;
     text-transform: capitalize;
 }
 
 #para {
-    font-size: 1.5rem;
-    padding-left:2%;
-    padding-right:2%;
+    font-size: 1.3em;
+    padding-left: 3%;
+    padding-right: 2%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    width: 90%;
 }
