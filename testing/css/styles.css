@@ -1,15 +1,12 @@
-
 body {
     background-image: url("./background.jpg");
-    background-attachment: fixed;
-    background: linear-gradient(to top, white, rgb(208, 156, 156));
 }
 
 .sidenav {
     width: 10%;
     float: left;
     height: 100vh;
-    background-color: cadetblue;
+    background-color: hsla(182, 83%, 9%, 0.282);
     border: 2px;
     border-style: solid;
 }
@@ -18,15 +15,17 @@ body {
     list-style: none;
     margin-left: -20px;
 }
-.sidenav ul a{
+
+.sidenav ul a {
     padding-right: 20px;
     text-transform: capitalize;
-    color:darkblue;
+    color: darkblue;
     text-decoration: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: large;
     text-align: left;
 }
+
 .form {
     padding-left: 1vh;
     position: relative;
@@ -90,13 +89,23 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     width: 90%;
 }
-@media only screen and (max-width:800px){
+
+@media only screen and (max-width:800px) {
     .sidenav{
-        display: none;
+        width: 20vw;
+
     }
     .form{
-        margin-left: 0;
-        
+        margin-left: 20vw;
     }
+}
 
+@media only screen and (max-width:600px) {
+    .sidenav {
+        display: none;
+    }
+    .form {
+        width: 100%;
+        margin-left: 0;
+    }
 }
