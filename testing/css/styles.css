@@ -1,8 +1,38 @@
+
 body {
-    background-image:url("./background.jpg");
+    background-image: url("./background.jpg");
     background-attachment: fixed;
-    background:linear-gradient(to top,white,rgb(208, 156, 156));
-    
+    background: linear-gradient(to top, white, rgb(208, 156, 156));
+}
+
+.sidenav {
+    width: 10%;
+    float: left;
+    height: 100vh;
+    background-color: cadetblue;
+    border: 2px;
+    border-style: solid;
+}
+
+.sidenav ul {
+    list-style: none;
+    margin-left: -20px;
+}
+.sidenav ul a{
+    padding-right: 20px;
+    text-transform: capitalize;
+    color:darkblue;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    text-align: left;
+}
+.form {
+    padding-left: 1vh;
+    position: relative;
+    margin-left: 10%;
+    border: 2px;
+    border-style: solid;
 }
 
 .nav {
@@ -59,4 +89,14 @@ body {
     padding-right: 2%;
     font-family: Georgia, 'Times New Roman', Times, serif;
     width: 90%;
+}
+@media only screen and (max-width:800px){
+    .sidenav{
+        display: none;
+    }
+    .form{
+        margin-left: 0;
+        
+    }
+
 }
