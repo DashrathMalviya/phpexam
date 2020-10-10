@@ -91,11 +91,10 @@ body {
 }
 
 @media only screen and (max-width:800px) {
-    .sidenav{
+    .sidenav {
         width: 20vw;
-
     }
-    .form{
+    .form {
         margin-left: 20vw;
     }
 }
@@ -109,11 +108,23 @@ body {
         margin-left: 0;
     }
 }
-.content{
+
+.content {
     margin-left: 13vw;
     margin-right: 3vw;
-
 }
-.sideNav{
+
+.sideNav {
     float: left;
+}
+
+.contect {
+    margin-left: 50px;
+}
+
+.contect #Comment {
+    width: 40%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    height: 200px;
 }
