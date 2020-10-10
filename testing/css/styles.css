@@ -109,3 +109,11 @@ body {
         margin-left: 0;
     }
 }
+.content{
+    margin-left: 13vw;
+    margin-right: 3vw;
+
+}
+.sideNav{
+    float: left;
+}
