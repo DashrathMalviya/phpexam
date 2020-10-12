@@ -16,6 +16,10 @@ body {
     margin-left: -20px;
 }
 
+h1 {
+    text-align: center;
+}
+
 .sidenav ul a {
     padding-right: 20px;
     text-transform: capitalize;
@@ -127,4 +131,28 @@ body {
     padding: 12px 20px;
     margin: 8px 0;
     height: 200px;
+}
+
+#showroomImg {
+    margin-left: 5vw;
+    width: 40vw;
+    height: 60vh;
+    float: left;
+    border-style: solid;
+    border-color: black;
+    padding: 5px;
+}
+
+#aboutImg {
+    margin-left: 47vw;
+    width: 40vw;
+    border-style: solid;
+    border-color: black;
+    padding: 10px;
+
+}
+
+.ad {
+    margin-top: 10vh;
+    clear: both;
 }
