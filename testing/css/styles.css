@@ -1,5 +1,6 @@
 body {
     background-image: url("./background.jpg");
+    background-attachment: fixed;
 }
 
 .sidenav {
@@ -156,14 +157,14 @@ h1 {
     clear: both;
 }
 
-.sells img, .parts img {
+.sells img {
     margin-left: 10vw;
     width: 30vw;
     height: 50vh;
     float: left;
 }
 
-.sellInfo, .partsInfo {
+.sellInfo {
     width: 40vw;
     margin-left: 45vw;
 }
@@ -174,11 +175,36 @@ h1 {
     width: 35vw;
     float: left;
 }
-.servicePic{
+
+.servicePic {
     margin-left: 50vw;
 }
+
 .servicePic img {
-    
     width: 30vw;
     height: 50vh;
+}
+
+.parts img {
+    margin-left: 10vw;
+    width: 30vw;
+    height: 50vh;
+    float: left;
+}
+
+.partsInfo {
+    width: 40vw;
+    margin-left: 45vw;
+}
+
+.loginButton {
+    background-color: grey;
+}
+
+button:hover {
+    background-color: black;
+}
+
+.contactData {
+    border: 2px solid black;
 }
