@@ -27,20 +27,43 @@ echo <<<END
     </div>
     </div>
 END;
-$db_server = mysqli_connect($db_host, $db_username, $db_password);
-if (!$db_server) die('unable to connect ');
 $db_database = 'contactInfo';
-mysqli_select_db($db_server, $db_database) or die("error in selecting database");
+$db_server = new mysqli($db_host, $db_username, $db_password, $db_database);
+if ($db_server->connect_error) ($db_server->connect_error);
+if (isset($_POST['delete']) && isset($_POST['id'])) {
+    $id = $_POST['id'];
+    $d_query = "DELETE FROM comment WHERE id = $id";
+    if (!$db_server->query($d_query)) {
+        echo "Delete failed " . $d_query;
+    };
+}
 $query_srtring = "Select * from comment";
-$result = mysqli_query($db_server, $query_srtring);
-$row = mysqli_num_rows($result);
-echo "<table class =\"contactData\" style =\"border:2px solid black \"> <tr> <th style =\"border:2px solid black \"> Name </th> <th style =\"border:2px solid black \"> Father Name </th><th style =\"border:2px solid black \"> Mobile No. </th><th style =\"border:2px solid black \"> Email </th><th style =\"border:2px solid black \"> Comment </th></tr>";
+$result = $db_server->query($query_srtring);
+if (!$result) die('unable to produce quiry ');
+$row = $result->num_rows;
+echo "<table class =\"contactData\" style =\"border:2px solid black \"> <tr> <th style =\"border:2px solid black \"> Name </th> <th style =\"border:2px solid black \"> Father Name </th><th style =\"border:2px solid black \"> Mobile No. </th><th style =\"border:2px solid black \"> Email </th><th style =\"border:2px solid black \"> Comment </th> ><th style =\"border:2px solid black \"> Action </th></tr>";
 for ($i = 0; $i < $row; $i++) {
     $row_data = mysqli_fetch_row($result);
     echo "<tr>";
-    for ($j = 0; $j < 5; $j++) {
-        echo "<td style =\"border:2px solid black \">" . $row_data[$j] . "</td>";
+    for ($j = 0; $j < 6; $j++) {
+        if ($j == 0) {
+            continue;
+        }
+        if ($j == 1) {
+            echo "<td style =\"border:2px solid black \"> <a href=\"viewContact.php?name=$row_data[$j]\">" . $row_data[$j] . "</a></td>";
+        } else {
+            echo "<td style =\"border:2px solid black \"> " . $row_data[$j] . "</td>";
+        }
     }
+    echo "<td>";
+    echo "<form action=\"login.php\" method=\"POST\">
+    <input type=\"hidden\" name=\"delete\" value=\"yes\">
+    <input type=\"hidden\" name=\"id\" value=\"$row_data[0]\">
+    <input type=\"submit\" value=\"DELETE RECORD\" style =\"border:2px solid black \">
+     </form> ";
+    echo "</td>";
     echo "</tr>";
 }
 echo "</table>";
+echo "
+</body> </html>";

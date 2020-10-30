@@ -13,7 +13,7 @@ if (!$db_server) {
 }
 $db_database = 'contactInfo';
 mysqli_select_db($db_server, $db_database) or die("error in selecting database");
-$query_string = "insert into comment(name,father,mobile,email,comment) values(\""  . $c_name . " \",\"" . $c_father . "\",\"" . $c_mobile . "\",\"" . $c_email . "\",\"" . $c_comment . "\")";
+$query_string = "insert into comment(id,name,father,mobile,email,comment) values('null',\""  . $c_name . " \",\"" . $c_father . "\",\"" . $c_mobile . "\",\"" . $c_email . "\",\"" . $c_comment . "\")";
 $result = mysqli_query($db_server, $query_string);
 if (!$result) die('query faild');
 else echo $result;
