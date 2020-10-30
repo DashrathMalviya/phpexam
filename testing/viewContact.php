@@ -1,11 +1,6 @@
 <?php
 require_once 'host_info.php';
-if (isset($_POST['remark']) && isset($_POST['attend'])) {
-    $c_name = $_POST['Name'];
-} else {
-
-    $c_name = $_GET['name'];
-}
+$c_name = $_GET['name'];
 $db_database = 'contactInfo';
 $db_server = new mysqli($db_host, $db_username, $db_password, $db_database);
 if ($db_server->connect_error) ($db_server->connect_error);
@@ -56,7 +51,7 @@ echo <<<END
         </ul>
     </div>
     <h1>Welcome In Sudeep Honda </h1>
-    <form action="viewContact.php" class="contect" method="POST">
+    <form action="viewContact.php?name=$c_name" class="contect" method="POST">
         <label for="Name">Name:</label><br>
         <input type="text" name="Name" id="Name" value="$c_name" disabled required><br>
         <label for="Father">Father Name:</label><br>

@@ -41,7 +41,7 @@ $query_srtring = "Select * from comment";
 $result = $db_server->query($query_srtring);
 if (!$result) die('unable to produce quiry ');
 $row = $result->num_rows;
-echo "<table class =\"contactData\" style =\"border:2px solid black \"> <tr> <th style =\"border:2px solid black \"> Name </th> <th style =\"border:2px solid black \"> Father Name </th><th style =\"border:2px solid black \"> Mobile No. </th><th style =\"border:2px solid black \"> Email </th><th style =\"border:2px solid black \"> Comment </th> ><th style =\"border:2px solid black \"> Action </th></tr>";
+echo "<table class =\"contactData\" style =\"border:2px solid black \"> <tr> <th style =\"border:2px solid black \"> Name </th> <th style =\"border:2px solid black \"> Father Name </th><th style =\"border:2px solid black \"> Mobile No. </th><th style =\"border:2px solid black \"> Email </th><th style =\"border:2px solid black \"> Comment </th> <th style =\"border:2px solid black \"> Action </th></tr>";
 for ($i = 0; $i < $row; $i++) {
     $row_data = mysqli_fetch_row($result);
     echo "<tr>";

@@ -127,7 +127,7 @@ h1 {
     margin-left: 50px;
 }
 
-.contect #Comment {
+.contect #Comment, .contect #remark {
     width: 40%;
     padding: 12px 20px;
     margin: 8px 0;
