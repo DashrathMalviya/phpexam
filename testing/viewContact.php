@@ -58,19 +58,17 @@ echo <<<END
     <h1>Welcome In Sudeep Honda </h1>
     <form action="viewContact.php" class="contect" method="POST">
         <label for="Name">Name:</label><br>
-        <input type="text" name="Name" id="Name" value="$c_name" required><br>
+        <input type="text" name="Name" id="Name" value="$c_name" disabled required><br>
         <label for="Father">Father Name:</label><br>
-        <input type="text" name="Father" id="Father" value="$c_father" required><br>
+        <input type="text" name="Father" id="Father" value="$c_father" disabled required><br>
         <label for="Mobile">Mobile No.:</label><br>
-        <input type="text" name="Mobile" id="Mobile" value="$c_mobile" required><br>
+        <input type="text" name="Mobile" id="Mobile" value="$c_mobile" disabled required><br>
         <label for="Email">Email:</label><br>
-        <input type="email" name="Email" id="Email" value="$c_email" required><br>
+        <input type="email" name="Email" id="Email" value="$c_email" disabled required><br>
         <label for="Comment">Comment:</label><br>
-        <input type="text" name="Comment" id="Comment" value="$c_comment" required><br>
-        <label for="preRemark">PreviusRemark:</label><br>
-        <button disabled="disabled" style="background-color:white;color:red;" >$c_remark</button><br>
+        <textarea name="Comment" id="Comment" cols="30" rows="10" disabled required> $c_comment</textarea><br>
         <label for="remark">Remark:</label><br>
-        <textarea name="remark" id="remark" cols="30" rows="10" required></textarea><br>
+        <textarea name="remark" id="remark" cols="30" rows="10" required>$c_remark</textarea><br>
         <input type="hidden" name="id" value="$c_id" >
         <input type="hidden" name="attend" value="yes" >
         <input type="submit" value="Submit"><br>
