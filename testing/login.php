@@ -1,32 +1,18 @@
 <?php
 require_once 'host_info.php';
-echo <<<END
-<!DOCTYPE html>
-<html lang="en">
+include ".\include\header.php";
+$user_name = 'Dashrath';
+$password = '@Dashrath';
+if (isset($_SERVER['PHP_AUTH_USER']) && isset($_SERVER['PHP_AUTH_PW'])) {
+    if ($_SERVER['PHP_AUTH_USER'] == $user_name && $_SERVER['PHP_AUTH_PW'] == $password) {
+    } else {
+        die("Wrong combination of u & p");
+    }
+} else {
+    fall();
+}
 
-<head>
-    <!-- <meta http-equiv="Refresh" content="0; url='pickMenu.html'"> -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv='cache-control' content='no-cache'>
-    <meta http-equiv='expires' content='0'>
-    <meta http-equiv='pragma' content='no-cache'>
-    <link rel="stylesheet" href="./css/styles.css">
-    <title>Document</title>
-</head>
-
-<body>
-    <div class="nav">
-        <ul>
-            <li class="marginLeft-0 marginRight-10"><a href="index.html">Home</a></li>
-            <li class="marginLeft-10 marginRight-10"><a href="./services.html">Services</a></li>
-            <li class="marginLeft-10 marginRight-10"><a href="./contect.html">Contact us</a></li>
-            <li class="marginLeft-10 marginRight-10"><a href="./about.html">About</a></li>
-            <button class="loginButton"><a href="login.php">Login</a></button>
-        </ul>
-    </div>
-    </div>
-END;
+echo '<h1> <marquee behavior="sliding" direction="left" style="border:3px solid black"> Wellcome ' . $_SERVER['PHP_AUTH_USER'] . " </marquee> </h1>";
 $db_database = 'contactInfo';
 $db_server = new mysqli($db_host, $db_username, $db_password, $db_database);
 if ($db_server->connect_error) ($db_server->connect_error);
@@ -67,3 +53,9 @@ for ($i = 0; $i < $row; $i++) {
 echo "</table>";
 echo "
 </body> </html>";
+function fall()
+{
+    header('WWW-Authenticate: Basic realm="Restricted Section"');
+    header('HTTP/1.0 401 Unauthorized');
+    die('please enter user name and password');
+}

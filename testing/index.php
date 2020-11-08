@@ -2,39 +2,33 @@
 <html lang="en">
 
 <head>
+    <!-- <meta http-equiv="Refresh" content="0; url='pickMenu.html'"> -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <meta http-equiv='cache-control' content='no-cache'>
     <meta http-equiv='expires' content='0'>
     <meta http-equiv='pragma' content='no-cache'>
     <link rel="stylesheet" href="./css/styles.css">
+    <title>Document</title>
 </head>
 
 <body>
+    <?php
+    setcookie('u_name', 'Dashrath', time() + 60 * 5, '/');
+    if (isset($_COOKIE['u_name'])) echo $_COOKIE['u_name'] . "\n";
+    echo "hello there";
+    ?>
     <div class="nav">
         <ul>
             <li class="marginLeft-0 marginRight-10"><a href="index.html">Home</a></li>
             <li class="marginLeft-10 marginRight-10"><a href="./services.html">Services</a></li>
             <li class="marginLeft-10 marginRight-10"><a href="./contect.html">Contact us</a></li>
             <li class="marginLeft-10 marginRight-10"><a href="./about.html">About</a></li>
+            <button class="loginButton"><a href="login.php">Login</a></button>
         </ul>
     </div>
-    <h1>Welcome In Sudeep Honda </h1>
-    <form action="contectAction.php" class="contect" method="POST">
-        <label for="Name">Name:</label><br>
-        <input type="text" name="Name" id="Name" required><br>
-        <label for="Father">Father Name:</label><br>
-        <input type="text" name="Father" id="Father" required><br>
-        <label for="Mobile">Mobile No.:</label><br>
-        <input type="text" name="Mobile" id="Mobile" required><br>
-        <label for="Email">Email:</label><br>
-        <input type="email" name="Email" id="Email" required><br>
-        <label for="Comment">Comment:</label><br>
-        <textarea name="Comment" id="Comment" cols="30" rows="10" required></textarea><br>
-        <input type="submit" value="Submit"><br>
-
-    </form>
+    </div>
+    <h1 class="mainHeading">Wellcome in Sudeep Honda</h1>
 
 </body>
 

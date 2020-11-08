@@ -208,3 +208,19 @@ button:hover {
 .contactData {
     border: 2px solid black;
 }
+
+.container {
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+}
+
+.container1 {
+    margin: auto;
+    margin-top: 10%;
+    max-height: 400px;
+    max-width: 600px;
+    border: 2px solid black;
+}

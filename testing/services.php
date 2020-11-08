@@ -14,7 +14,7 @@
 <body class="servicesBody">
     <div class="nav">
         <ul>
-            <li class="marginLeft-0 marginRight-10"><a href="index.html">Home</a></li>
+            <li class="marginLeft-0 marginRight-10"><a href="index.php">Home</a></li>
             <li class="marginLeft-10 marginRight-10"><a href="./services.html">Services</a></li>
             <li class="marginLeft-10 marginRight-10"><a href="./contect.html">Contact us</a></li>
             <li class="marginLeft-10 marginRight-10"><a href="./about.html">About</a></li>
@@ -87,6 +87,9 @@
             </p>
         </div>
     </div>
+    <h1>
+        <marquee behavior="sliding" direction="left"> </marquee>
+    </h1>
 
 </body>
 

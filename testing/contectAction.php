@@ -17,6 +17,5 @@ $query_string = "insert into comment(id,name,father,mobile,email,comment) values
 $result = mysqli_query($db_server, $query_string);
 if (!$result) die('query faild');
 else echo $result;
-echo "Thank you for your Suggetion :)";
-echo "<button> <a href=\"./index.html\">New</a></button>";
+header('Location: index.php');
 ?>
