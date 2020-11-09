@@ -1,4 +1,8 @@
 <?php
+include '.\include\header.php';
+if (!isset($_SESSION['userName'])) {
+    header('Location: authenticate.php');
+}
 require_once 'host_info.php';
 $c_name = $_GET['name'];
 $db_database = 'contactInfo';
@@ -28,28 +32,6 @@ $c_comment = $row_data['comment'];
 $c_remark = $row_data['remark'];
 
 echo <<<END
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <meta http-equiv='cache-control' content='no-cache'>
-    <meta http-equiv='expires' content='0'>
-    <meta http-equiv='pragma' content='no-cache'>
-    <link rel="stylesheet" href="./css/styles.css">
-</head>
-
-<body>
-    <div class="nav">
-        <ul>
-            <li class="marginLeft-0 marginRight-10"><a href="index.html">Home</a></li>
-            <li class="marginLeft-10 marginRight-10"><a href="./services.html">Services</a></li>
-            <li class="marginLeft-10 marginRight-10"><a href="./contect.html">Contact us</a></li>
-            <li class="marginLeft-10 marginRight-10"><a href="./about.html">About</a></li>
-        </ul>
-    </div>
     <h1>Welcome In Sudeep Honda </h1>
     <form action="viewContact.php?name=$c_name" class="contect" method="POST">
         <label for="Name">Name:</label><br>
