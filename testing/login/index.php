@@ -1,10 +1,11 @@
 <?php
-include ".\include\header.php";
+//login file   
+require "..\include\header.php";
 if (!isset($_SESSION['userName'])) {
-    header('Location: authenticate.php');
+    header('Location: ..\authenticate.php');
 }
-require_once 'host_info.php';
-require_once ".\include\salting.php";
+require_once '..\host_info.php';
+require_once "..\include\salting.php";
 echo '<h1> <marquee behavior="sliding" direction="left" style="border:3px solid black"> Wellcome ' . $_SESSION['userName'] . " </marquee> </h1>";
 $db_database = 'contactInfo';
 $db_server = new mysqli($db_host, $db_username, $db_password, $db_database);
@@ -48,4 +49,3 @@ for ($i = 0; $i < $row; $i++) {
 echo "</table>";
 echo "
 </body> </html>";
-

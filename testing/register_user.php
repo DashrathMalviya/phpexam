@@ -20,38 +20,35 @@ if (
     $row = $uResult->num_rows;
     $uAvailable = $row == 0;
     if (!$pMatch) {
-        echo '
+        echo
+            '
         <script>
-            alert("Password dosent match");
-        </script>
-        <h> Go back to the pager<h1>';
-    }
-
-    if ($uAvailable) {
-        $token = hash('ripemd128', $preSalt . $password . $postSalt);
-        $query = "INSERT into logininfo values('$name','$userName','$token')";
-        header('Location: index.php');
-        if (!$server->query($query)) {
-            die('some error' . mysqli_error($server));
-        }
+            document.write("hello password dosent match");
+        </script>';
     } else {
+        if ($uAvailable && $pMatch) {
+            $token = hash('ripemd128', $preSalt . $password . $postSalt);
+            $query = "INSERT into logininfo values('$name','$userName','$token')";
+            header('Location: index.php');
+            if (!$server->query($query)) {
+                die('some error' . mysqli_error($server));
+            }
+        } else {
 
-        echo '
-        <script>
-            alert("User name is taken");
-        </script>
-        <h> Go back to the pager<h1>';
+            echo '
+            <script>
+                alert("User name is taken");
+            </script>
+            <h> Go back to the pager<h1>';
+        }
     }
-
-
-   
 } else {
     echo '
 <div class="container">
     <div class="container1">
         <form action="register_user.php" method="POST">
            
-                <label for="name">Name:</label>
+                <label for="name" id="lName">Name:</label>
                 <input type="text" name="name" id="name" ><br>
            
            

@@ -1,7 +1,7 @@
 <?php
 include ".\include\header.php";
 if (isset($_SESSION['userName'])) {
-    header('Location: login.php');
+    header('Location: ./login/');
 } else {
     require_once 'host_info.php';
     require_once ".\include\salting.php";
@@ -26,7 +26,7 @@ if (isset($_SESSION['userName'])) {
             $_SESSION['userName'] = $userName;
             $u_result->close();
             $db_server->close();
-            header('Location: login.php');
+            header('Location: ./login/');
         } else {
             die("Wrong combination of u & p");
         }
